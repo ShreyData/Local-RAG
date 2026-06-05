@@ -1,0 +1,10 @@
+streamlit
+llama-index
+llama-index-llms-google-genai
+llama-index-embeddings-huggingface
+llama-index-readers-file
+sentence-transformers
+pypdf
+python-dotenv
+torch
+torchvision
