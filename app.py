@@ -95,7 +95,7 @@ if uploaded_file:
             with st.status(f"⚡ Loading '{uploaded_file.name}' from local cache...", expanded=False) as status:
                 storage_context = StorageContext.from_defaults(persist_dir=cache_path)
                 st.session_state.index = load_index_from_storage(storage_context)
-                status.update(label=f"✅ Loaded from cache!", state="complete")
+                status.update(label="✅ Loaded from cache!", state="complete")
                 st.success(f"⚡ Instant Load: Ready to chat about '{uploaded_file.name}'!")
         else:
             with st.status(f"Indexing '{uploaded_file.name}' locally...", expanded=True) as status:
