@@ -95,18 +95,29 @@ For a technical deep-dive, architectural specifications, and project vision, exp
    cd Rag_Bot
    ```
 
-2. **Install Dependencies**:
+2. **Create a Virtual Environment (Recommended)**:
+   ```bash
+   # Windows
+   python -m venv .venv
+   .venv\Scripts\activate
+
+   # Linux/macOS
+   python3 -m venv .venv
+   source .venv/bin/activate
+   ```
+
+3. **Install Dependencies**:
    ```bash
    pip install -r requirements.txt
    ```
 
-3. **Configure Environment**:
+4. **Configure Environment**:
    Create a `.env` file and add your API key:
    ```bash
    GEMINI_API_KEY=your_google_ai_studio_api_key
    ```
 
-4. **Run the App**:
+5. **Run the App**:
    ```bash
    streamlit run app.py
    ```
