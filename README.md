@@ -90,10 +90,32 @@ Rag_Bot/
 ├── app.py             # Main Streamlit UI
 ├── docs/              # Detailed Technical Documentation
 ├── storage/           # Local index cache (gitignored)
+├── Dockerfile         # Container definition
+├── docker-compose.yaml # Multi-container orchestration
 └── requirements.txt   # Dependencies
 ```
 
 ## 🛠️ Installation & Setup
+
+### Option 1: Using Docker (Recommended)
+
+This is the easiest way to run the project. It handles all dependencies and automatically uses your GPU if available.
+
+1. **Install Docker** and **Docker Compose**.
+2. **Configure Environment**:
+   Create a `.env` file and add your API key:
+   ```bash
+   GEMINI_API_KEY=your_google_ai_studio_api_key
+   ```
+3. **Run the App**:
+   ```bash
+   docker compose up --build
+   ```
+4. Access the app at `http://localhost:8501`.
+
+*Note: For GPU support in Docker, ensure you have the [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) installed.*
+
+### Option 2: Local Installation (Manual)
 
 1. **Clone the repo**:
    ```bash
@@ -101,7 +123,7 @@ Rag_Bot/
    cd Rag_Bot
    ```
 
-2. **Create a Virtual Environment (Recommended)**:
+2. **Create a Virtual Environment**:
    ```bash
    # Windows
    python -m venv .venv

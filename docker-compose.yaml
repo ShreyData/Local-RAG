@@ -1,0 +1,25 @@
+services:
+  rag-bot:
+    build: .
+    container_name: gemma-rag-bot
+    ports:
+      - "8501:8501"
+    env_file:
+      - .env
+    volumes:
+      - ./storage:/app/storage
+      # Mount the models cache to avoid re-downloading them every time the container starts
+      - hf_models_cache:/root/.cache/huggingface
+      - torch_cache:/root/.cache/torch
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    restart: unless-stopped
+
+volumes:
+  hf_models_cache:
+  torch_cache:
