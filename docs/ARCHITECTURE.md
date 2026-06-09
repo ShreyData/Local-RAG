@@ -37,7 +37,22 @@ graph TD
 
 ---
 
-## 3. Deep Dive: The Data Lifecycle
+## 3. Project Structure
+The project follows a modular design to separate UI concerns from core RAG logic.
+
+```text
+Rag_Bot/
+├── src/
+│   ├── config.py      # Constants, Model IDs, and Environment loading
+│   ├── engine.py      # Core RAG logic (Indexing, Querying, Settings)
+│   └── utils.py       # Logging, directory management, and helpers
+├── app.py             # Main Streamlit application
+├── storage/           # Local cache for vector indices
+├── docs/              # Technical documentation
+└── requirements.txt   # Project dependencies
+```
+
+## 4. Deep Dive: The Data Lifecycle
 
 ### 3.1 Data Ingestion & Transformation (Chunking)
 The system uses a **Hierarchical Structural Splitter** to transform unstructured PDF text into searchable units.

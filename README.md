@@ -79,13 +79,19 @@ graph LR
 
 ---
 
-## 📖 Documentation
+## 📂 Project Structure
 
-For a technical deep-dive, architectural specifications, and project vision, explore our documentation:
-- [**Product Requirements (PRD)**](docs/PRD.md): Vision, Success Metrics, and Logic Flow.
-- [**Functional Requirements (FRD)**](docs/FRD.md): Technical Stack, Hardware Specs, and Data Security.
-
----
+```text
+Rag_Bot/
+├── src/
+│   ├── config.py      # Configuration and Environment loading
+│   ├── engine.py      # Core RAG logic (Indexing, Querying)
+│   └── utils.py       # Helper functions and logging
+├── app.py             # Main Streamlit UI
+├── docs/              # Detailed Technical Documentation
+├── storage/           # Local index cache (gitignored)
+└── requirements.txt   # Dependencies
+```
 
 ## 🛠️ Installation & Setup
 
